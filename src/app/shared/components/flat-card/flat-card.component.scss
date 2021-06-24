@@ -7,10 +7,19 @@
   }
 
   &__heading {
+    position: relative;
     background: darkgray;
     margin: 0;
     padding: 1rem;
     color: white;
+  }
+
+  &__delete-button {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
   }
 
   &__data-container {

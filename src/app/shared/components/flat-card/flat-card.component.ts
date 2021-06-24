@@ -1,4 +1,10 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
+  Output,
+} from '@angular/core';
 import { Flat } from 'src/app/core/interfaces/flat.interface';
 
 @Component({
@@ -10,4 +16,6 @@ export class FlatCardComponent {
   @HostBinding() class = 'app-flat-card';
 
   @Input() flat!: Flat;
+
+  @Output() delete = new EventEmitter<void>();
 }

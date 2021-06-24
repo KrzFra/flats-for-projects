@@ -1,4 +1,9 @@
-<h2 class="app-flat-card__heading">Flat: {{ flat.id }} - {{ flat.rent }} €</h2>
+<h2 class="app-flat-card__heading">
+  Flat: {{ flat.id }} - {{ flat.rent }} €
+  <button class="app-flat-card__delete-button" (click)="delete.next()">
+    X
+  </button>
+</h2>
 <div class="app-flat-card__data-container">
   <div class="app-flat-card__data-container__column">
     <h3>Adresse</h3>

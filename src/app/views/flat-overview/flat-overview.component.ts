@@ -1,4 +1,9 @@
-import { Component, HostBinding } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  HostBinding,
+  OnInit,
+} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flat } from 'src/app/core/interfaces/flat.interface';
 import { FlatServiceService } from './../../core/services/flat-service/flat-service.service';
@@ -8,10 +13,22 @@ import { FlatServiceService } from './../../core/services/flat-service/flat-serv
   templateUrl: './flat-overview.component.html',
   styleUrls: ['./flat-overview.component.scss'],
 })
-export class FlatOverviewComponent {
+export class FlatOverviewComponent implements OnInit {
   @HostBinding() class = 'app-flat-overview';
 
-  flats$: Observable<Flat[]> = this.flatService.getFlats();
+  flats: Flat[] = [];
 
   constructor(private flatService: FlatServiceService) {}
+
+  ngOnInit() {
+    this.flatService.getFlats().subscribe((flats) => (this.flats = flats));
+  }
+
+  deleteFlat(id: string): void {
+    this.flatService.deleteFlat(id).subscribe(() => {
+      this.flatService.getFlats().subscribe((flats) => {
+        this.flats = flats;
+      });
+    });
+  }
 }

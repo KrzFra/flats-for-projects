@@ -1,5 +1,8 @@
+
+
 <app-flat-card
   class="app-flat-overview__flat-card"
-  *ngFor="let flat of flats$ | async"
+  *ngFor="let flat of flats"
   [flat]="flat"
+  (delete)="deleteFlat(flat.id)"
 ></app-flat-card>

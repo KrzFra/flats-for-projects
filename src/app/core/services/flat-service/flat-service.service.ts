@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Flat } from '../../interfaces/flat.interface';
 
 @Injectable({
@@ -33,11 +34,21 @@ export class FlatServiceService {
   }
 
   getFlats(): Observable<Flat[]> {
-    return of(this.flats);
+    return of(this.flats).pipe(delay(500));
   }
 
   getFlat(id: string): Observable<Flat | undefined> {
-    const flat = this.flats.find((flat) => flat.id === id);
-    return of(flat);
+    const flat: Flat | undefined = this.flats.find((flat) => flat.id === id);
+    return of(flat).pipe(delay(500));
+  }
+
+  deleteFlat(id: string): Observable<void> {
+    this.flats = this.flats.filter((flat) => flat.id !== id);
+    return of(undefined).pipe(delay(500));
+  }
+
+  postFlat(flat: Flat): Observable<Flat> {
+    this.flats.push(flat);
+    return of(flat).pipe(delay(500));
   }
 }
