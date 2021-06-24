@@ -1,0 +1,9 @@
+.app-flat-overview {
+  &:host {
+    display: block;
+  }
+
+  &__flat-card {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,23 @@
+<h2 class="app-flat-card__heading">Flat: {{ flat.id }} - {{ flat.rent }} €</h2>
+<div class="app-flat-card__data-container">
+  <div class="app-flat-card__data-container__column">
+    <h3>Adresse</h3>
+    <p>Straße: {{ flat.address.street }}</p>
+    <p>Hausnummer: {{ flat.address.houseNumber }}</p>
+    <p>PLZ: {{ flat.address.zipCode }}</p>
+    <p>Stadt: {{ flat.address.city }}</p>
+  </div>
+  <div class="app-flat-card__data-container__column">
+    <h3>Eckdaten</h3>
+    <p>Anzahl Räume: {{ flat.amountOfRooms }}</p>
+    <p>Zeit zum Büro: {{ flat.traveltimeToOffice }}s</p>
+    <p>Fläche: {{ flat.area }}</p>
+  </div>
+  <div class="app-flat-card__data-container__column">
+    <h3>Eigenschaften</h3>
+    <p>hat separate Toilette: {{ flat.hasSeparateToilet }}</p>
+    <p>hat Einbauküche: {{ flat.hasBuiltInKitchen }}</p>
+    <p>hat Balkon: {{ flat.hasBalcony }}</p>
+    <p>hat Garage: {{ flat.hasGarage }}</p>
+  </div>
+</div>

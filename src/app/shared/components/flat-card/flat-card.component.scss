@@ -1,0 +1,24 @@
+.app-flat-card {
+  &:host {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    background: lightgray;
+  }
+
+  &__heading {
+    background: darkgray;
+    margin: 0;
+    padding: 1rem;
+    color: white;
+  }
+
+  &__data-container {
+    display: flex;
+    padding: 1rem;
+
+    &__column {
+      flex-grow: 1;
+    }
+  }
+}

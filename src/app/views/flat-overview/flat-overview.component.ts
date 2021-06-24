@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Flat } from 'src/app/core/interfaces/flat.interface';
+import { FlatServiceService } from './../../core/services/flat-service/flat-service.service';
 
 @Component({
   selector: 'app-flat-overview',
   templateUrl: './flat-overview.component.html',
-  styleUrls: ['./flat-overview.component.scss']
+  styleUrls: ['./flat-overview.component.scss'],
 })
-export class FlatOverviewComponent implements OnInit {
+export class FlatOverviewComponent {
+  @HostBinding() class = 'app-flat-overview';
 
-  constructor() { }
+  flats$: Observable<Flat[]> = this.flatService.getFlats();
 
-  ngOnInit(): void {
-  }
-
+  constructor(private flatService: FlatServiceService) {}
 }

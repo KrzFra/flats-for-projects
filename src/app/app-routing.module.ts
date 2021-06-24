@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./views/flat-overview/flat-overview.module').then(
-        (m) => m.FlatOverviewModule
+        (m) => m.AppFlatOverviewModule
       ),
   },
 ];
