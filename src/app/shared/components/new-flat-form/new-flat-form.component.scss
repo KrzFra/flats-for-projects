@@ -1,0 +1,23 @@
+.app-new-flat-form {
+  &:host {
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+
+  &__send-button {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+label {
+  display: inline-block;
+  width: 40%;
+}
+
+input {
+  display: inline-block;
+}

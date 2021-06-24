@@ -48,6 +48,9 @@ export class FlatServiceService {
   }
 
   postFlat(flat: Flat): Observable<Flat> {
+    flat.id = this.flats.length.toString();
+
+    console.log('postFlat', flat);
     this.flats.push(flat);
     return of(flat).pipe(delay(500));
   }

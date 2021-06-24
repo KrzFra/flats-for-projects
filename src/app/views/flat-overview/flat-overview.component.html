@@ -1,4 +1,16 @@
+<button
+  class="app-flat-overview__add-button"
+  (click)="displayNewFlatForm = true"
+>
+  +
+</button>
 
+<div *ngIf="displayNewFlatForm" class="app-flat-overview__overlay-backdrop">
+  <app-new-flat-form
+    class="app-flat-overview__new-flat-form"
+    (close)="onClose_newFlatForm()"
+  ></app-new-flat-form>
+</div>
 
 <app-flat-card
   class="app-flat-overview__flat-card"

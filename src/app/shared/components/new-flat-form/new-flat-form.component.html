@@ -1,0 +1,105 @@
+<h2>Neues Formular</h2>
+<div>
+  <label>Miete: </label>
+  <input type="number" [(ngModel)]="newFlat.rent" />
+</div>
+<div>
+  <label>Straße: </label>
+  <input type="text" [(ngModel)]="address.street" />
+</div>
+<div>
+  <label>Hausnummer: </label>
+  <input type="text" [(ngModel)]="address.houseNumber" />
+</div>
+<div>
+  <label>PLZ: </label>
+  <input type="number" [(ngModel)]="address.zipCode" />
+</div>
+<div>
+  <label>Stadt: </label>
+  <input type="text" [(ngModel)]="address.city" />
+</div>
+<div>
+  <label>Anzahl Räume: </label>
+  <input type="number" [(ngModel)]="newFlat.amountOfRooms" />
+</div>
+<div>
+  <label>Fläche: </label>
+  <input type="number" [(ngModel)]="newFlat.area" />
+</div>
+
+<div>
+  <label>separate Toilette: </label>
+  <input
+    type="radio"
+    name="hasSeparateToilet"
+    value="true"
+    [(ngModel)]="newFlat.hasSeparateToilet"
+  />
+  Ja
+  <input
+    type="radio"
+    name="hasSeparateToilet"
+    value="false"
+    [(ngModel)]="newFlat.hasSeparateToilet"
+  />
+  Nein
+</div>
+
+<div>
+  <label>Einbauküche: </label>
+  <input
+    type="radio"
+    name="hasBuiltInKitchen"
+    value="true"
+    [(ngModel)]="newFlat.hasBuiltInKitchen"
+  />
+  Ja
+  <input
+    type="radio"
+    name="hasBuiltInKitchen"
+    value="false"
+    [(ngModel)]="newFlat.hasBuiltInKitchen"
+  />
+  Nein
+</div>
+
+<div>
+  <label>Balkon: </label>
+  <input
+    type="radio"
+    name="hasBalcony"
+    value="true"
+    [(ngModel)]="newFlat.hasBalcony"
+  />
+  Ja
+  <input
+    type="radio"
+    name="hasBalcony"
+    value="false"
+    [(ngModel)]="newFlat.hasBalcony"
+  />
+  Nein
+</div>
+
+<div>
+  <label>Garage: </label>
+  <input
+    type="radio"
+    name="hasGarage"
+    value="true"
+    [(ngModel)]="newFlat.hasGarage"
+  />
+  Ja
+  <input
+    type="radio"
+    name="hasGarage"
+    value="false"
+    [(ngModel)]="newFlat.hasGarage"
+  />
+  Nein
+</div>
+
+<button class="app-new-flat-form__send-button" (click)="onClick_sendButton()">
+  Abschicken
+</button>
